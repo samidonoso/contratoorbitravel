@@ -153,7 +153,7 @@
         <h1>CONTRATO DE PRESTACIÓN DE SERVICIOS DIGITALES E INNOVACIÓN WEB</h1>
 
         <p>
-            En Quilpué, a 27 de julio de 2024, entre <strong>ORBITRAVEL SPA</strong>, RUT N.º <strong>77.811.914-5</strong>, representada legalmente para estos efectos por doña <strong>MARY VAITIARE ALVARADO PONCE</strong>, Cédula de Identidad N.º <strong>17.016.630-2</strong>, ambos con domicilio en Colón #358, La Serena, Coquimbo, en adelante "el <strong>CONTRATANTE</strong>"; y don <strong>SAMI BASTIAN DONOSO BARRIGA</strong>, Cédula de Identidad N.º <strong>17.526.506-6</strong>, con domicilio en Quilpué, en adelante "el <strong>PRESTADOR</strong>", se ha convenido el siguiente contrato de prestación de servicios:
+            En Quilpué, a 27 de julio de 2024, entre <strong>ORBITRAVEL SPA</strong>, RUT N.º <strong>77.811.914-5</strong>, representada legalmente para estos efectos por la <strong>Srta. MARY VAITIARE ALVARADO PONCE</strong>, Cédula de Identidad N.º <strong>17.016.630-2</strong>, ambos con domicilio en Colón #358, La Serena, Coquimbo, en adelante "el <strong>CONTRATANTE</strong>"; y el <strong>Sr. SAMI BASTIAN DONOSO BARRIGA</strong>, Cédula de Identidad N.º <strong>17.526.506-6</strong>, con domicilio en Quilpué, en adelante "el <strong>PRESTADOR</strong>", se ha convenido el siguiente contrato de prestación de servicios:
         </p>
 
         <h2 id="title_clausula_1">CLÁUSULA PRIMERA: OBJETO DEL CONTRATO</h2>
@@ -340,13 +340,17 @@
                 introBody += "--------------------------------------------------\n\n";
 
                 let clausesBody = "";
-                const totalClauses = 8; // Updated to include all 8 clauses
+                const totalClauses = 8; 
 
                 for (let i = 1; i <= totalClauses; i++) {
-                    const title = document.getElementById(`title_clausula_${i}`).innerText;
-                    const content = document.getElementById(`content_clausula_${i}`).innerText;
-                    clausesBody += `**${title}**\n\n${content}\n\n`;
-                    clausesBody += "--------------------------------------------------\n\n";
+                    const titleElement = document.getElementById(`title_clausula_${i}`);
+                    const contentElement = document.getElementById(`content_clausula_${i}`);
+                    if (titleElement && contentElement) {
+                        const title = titleElement.innerText;
+                        const content = contentElement.innerText;
+                        clausesBody += `**${title}**\n\n${content}\n\n`;
+                        clausesBody += "--------------------------------------------------\n\n";
+                    }
                 }
 
                 let finalBody = introBody + clausesBody;
